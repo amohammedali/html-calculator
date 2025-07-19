@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Calculator | CodSoft Task</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Professional Calculator</h1>
+            <p>A responsive calculator with all basic operations</p>
+            <div class="codsoft-badge">CodSoft Internship Project</div>
+        </header>
+        
+        <div class="calculator-container">
+            <div class="calculator">
+                <div class="display">
+                    <div class="previous-operand"></div>
+                    <div class="current-operand">0</div>
+                </div>
+                
+                <div class="buttons-grid">
+                    <button class="span-two" data-action="clear">AC</button>
+                    <button data-action="delete"><i class="fas fa-backspace"></i></button>
+                    <button data-operation>÷</button>
+                    
+                    <button data-number>7</button>
+                    <button data-number>8</button>
+                    <button data-number>9</button>
+                    <button data-operation>×</button>
+                    
+                    <button data-number>4</button>
+                    <button data-number>5</button>
+                    <button data-number>6</button>
+                    <button data-operation>-</button>
+                    
+                    <button data-number>1</button>
+                    <button data-number>2</button>
+                    <button data-number>3</button>
+                    <button data-operation>+</button>
+                    
+                    <button data-number>0</button>
+                    <button data-number>.</button>
+                    <button class="span-two" data-action="equals">=</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Task #3 for CodSoft Web Development Internship</p>
+            <div class="social-links">
+                <a href="#" class="github"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" class="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

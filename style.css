@@ -1,0 +1,251 @@
+:root {
+    --bg-color: #1a1a1a;
+    --display-bg: #252525;
+    --button-bg: #333333;
+    --button-hover: #4d4d4d;
+    --operator-bg: #ff9500;
+    --operator-hover: #ffaa33;
+    --operator-active: #e68a00;
+    --text-color: #ffffff;
+    --secondary-text: #aaaaaa;
+    --action-bg: #a5a5a5;
+    --action-text: #000000;
+    --primary-gradient: linear-gradient(135deg, #1e3c72, #2a5298);
+    --accent-color: #ff6b6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--primary-gradient);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.codsoft-badge {
+    background: linear-gradient(45deg, #ff8a00, #ff2070);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.calculator-container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+}
+
+.calculator {
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    background-color: var(--display-bg);
+    padding: 1.5rem;
+    text-align: right;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    min-height: 1.5rem;
+}
+
+.current-operand {
+    font-size: 2.5rem;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--bg-color);
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    height: 70px;
+    font-size: 1.5rem;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+[data-operation] {
+    background-color: var(--operator-bg);
+    font-size: 1.8rem;
+}
+
+[data-operation]:hover {
+    background-color: var(--operator-hover);
+}
+
+[data-operation]:active {
+    background-color: var(--operator-active);
+}
+
+.span-two {
+    grid-column: span 2;
+    border-radius: 35px;
+}
+
+[data-action="clear"] {
+    background-color: var(--action-bg);
+    color: var(--action-text);
+}
+
+[data-action="delete"] {
+    background-color: var(--action-bg);
+    color: var(--action-text);
+}
+
+[data-action="equals"] {
+    background-color: var(--operator-bg);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+}
+
+.social-links a.github {
+    background: #333;
+}
+
+.social-links a.linkedin {
+    background: #0077b5;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 500px) {
+    .calculator-container {
+        padding: 10px;
+    }
+    
+    button {
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .display {
+        min-height: 100px;
+        padding: 1rem;
+    }
+    
+    .previous-operand {
+        font-size: 1rem;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
